@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mbaimbai Takalani Ignitius - Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=Fira+Code:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Custom Cursor -->
+    <div class="cursor-dot" id="cursorDot"></div>
+    <div class="cursor-follower" id="cursorFollower"></div>
+
+    <!-- Animated Background Canvas -->
+    <canvas id="backgroundCanvas"></canvas>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">Mbaimbai Takalani</div>
+            <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#home" class="nav-link">Homepage</a></li>
+                <li><a href="#about" class="nav-link">About Me</a></li>
+                <li><a href="#academic" class="nav-link">Academic Background</a></li>
+                <li><a href="#achievements" class="nav-link">Achievements</a></li>
+                <li><a href="#olympiad" class="nav-link">Olympiad</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Floating Symbols Container -->
+    <div class="floating-symbols-container" id="floatingSymbolsContainer"></div>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    Welcome, I am
+                    <span class="name-gradient">Mbaimbai Takalani<br>Ignitius</span>
+                </h1>
+                <p class="hero-subtitle"></p>
+                <p class="hero-description">
+                    Bachelor of Mathematics and Computer Science student at the University of Venda, combining rigorous mathematical thinking with computer science innovation to solve real-world challenges.
+                </p>
+                <button class="cta-button">Learn About Me</button>
+
+                <!-- Scroll Indicator -->
+                <button class="scroll-indicator" id="scrollIndicator" aria-label="Scroll to next section">
+                    <span class="scroll-indicator__mouse">
+                        <span class="scroll-indicator__wheel"></span>
+                    </span>
+                    <span class="scroll-indicator__text">Explore My Work</span>
+                    <span class="scroll-indicator__arrow">↓</span>
+                </button>
+            </div>
+            <div class="hero-image">
+                <div class="image-wrapper">
+                    <img src="profile.jpeg" alt="Mbaimbai Takalani Ignitius">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">About <span class="accent-cyan">Me</span></h2>
+            <div class="about-content">
+                <p>I am a dedicated Mathematics and Computer Science student at the University of Venda, currently in my second year of study. I have a strong passion for problem-solving, analytical thinking, and applying mathematical concepts to real-world challenges.</p>
+                <p>My academic journey has been marked by consistent performance, including achieving distinctions across multiple modules and maintaining strong overall averages. I am particularly interested in areas that combine mathematics and computing to create efficient and meaningful solutions.</p>
+                <p>I have developed skills in programming, logical reasoning, and mathematical analysis. I am familiar with tools and technologies such as Java, HTML, CSS, and JavaScript, and I continuously work on improving my ability to design and build functional systems.</p>
+                <p>Beyond academics, I founded Sigma Academy, an initiative focused on mathematics support and mentoring, where I also employed a team member, demonstrating leadership and entrepreneurial thinking. I am also actively involved in a collaborative development initiative with fellow university students, where we design and build real-world, sustainable applications through problem-solving and system design.</p>
+                <p>My goal is to become a skilled software developer while also growing as an entrepreneur, with a vision of transforming development initiatives into a company that builds impactful educational and everyday applications aimed at improving accessibility and making people's lives easier.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Academic Background Section -->
+    <section id="academic" class="education">
+        <div class="container">
+            <h2 class="section-title">Academic <span class="accent-cyan">Background</span></h2>
+            <div class="education-grid">
+                <div class="education-card">
+                    <h3 class="accent-magenta">University of Venda</h3>
+                    <p class="degree">Bachelor of Mathematics and Computer Science</p>
+                    <p class="year">2025 - 2026 (Second Year)</p>
+                    <p class="description">Pursuing advanced studies in mathematics and computer science with focus on problem-solving and algorithmic thinking.</p>
+                </div>
+                <div class="education-card">
+                    <h3 class="accent-yellow">Mulima Secondary School</h3>
+                    <p class="degree">National Senior Certificate (NSC)</p>
+                    <p class="year">Completed 2024</p>
+                    <p class="description">Achieved <span class="accent-yellow">74%</span> average with 2 distinctions. Recognized as Top Student and ranked 1st in circuit on several occasions.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Achievements Section -->
+    <section id="achievements" class="achievements">
+        <div class="container">
+            <h2 class="section-title">Academic <span class="accent-yellow">Achievements</span></h2>
+            <div class="achievements-content">
+                <div class="achievement-block">
+                    <h3 class="accent-cyan">University of Venda</h3>
+                    <div class="achievement-item">
+                        <h4>2026 (Second Year)</h4>
+                        <ul>
+                            <li>Achieved a perfect score of 55/55 in Multivariable Calculus test</li>
+                        </ul>
+                    </div>
+                    <div class="achievement-item">
+                        <h4>2025 (First Year)</h4>
+                        <p><strong>First Semester:</strong></p>
+                        <ul>
+                            <li>Achieved 4 distinctions out of 8 modules</li>
+                            <li>Maintained <span class="accent-yellow">75%</span> overall average</li>
+                            <li>Ranked 4th in academic support academy</li>
+                        </ul>
+                        <p><strong>Second Semester:</strong></p>
+                        <ul>
+                            <li>Achieved 5 distinctions out of 7 modules</li>
+                            <li>Maintained <span class="accent-yellow">80%</span> overall average</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="achievement-block">
+                    <h3 class="accent-magenta">Mulima Secondary School</h3>
+                    <ul>
+                        <li>Final NSC average of <span class="accent-yellow">74%</span></li>
+                        <li>Obtained 2 distinctions</li>
+                        <li>Recognized as Top Student upon entry</li>
+                        <li>Awarded multiple academic certificates and medals</li>
+                        <li>Ranked 1st in circuit on several occasions</li>
+                        <li>Ranked 5th in circuit in Term 3 with <span class="accent-yellow">69%</span> average</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mathematics Olympiad Section -->
+    <section id="olympiad" class="olympiad">
+        <div class="container">
+            <h2 class="section-title">Mathematics <span class="accent-yellow">Olympiad</span></h2>
+            <p class="olympiad-subtitle">SATMO (South African Tertiary Mathematics Olympiad)</p>
+            <div class="olympiad-content">
+                <div class="olympiad-details">
+                    <div class="olympiad-card">
+                        <h3 class="accent-cyan">Competition Experience</h3>
+                        <p>Passionate participant in SATMO (South African Tertiary Mathematics Olympiad), challenging myself with complex problem-solving at the highest levels. These competitions have sharpened my analytical thinking and deepened my appreciation for elegant mathematical solutions.</p>
+                    </div>
+                    <div class="olympiad-card">
+                        <h3 class="accent-magenta">Key Areas</h3>
+                        <ul>
+                            <li>Combinatorics - Counting and arrangement problems</li>
+                            <li>Number Theory - Properties of integers and primes</li>
+                            <li>Linear Algebra - Matrix theory and vector spaces</li>
+                            <li>Proof Writing - Rigorous mathematical arguments</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <h2 class="section-title"><span class="accent-yellow">GitHub</span> Projects</h2>
+            <div class="projects-grid" id="projectsGrid">
+                <p class="loading">Loading projects...</p>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
+        <div class="container">
+            <h2 class="section-title">Technical <span class="accent-cyan">Skills</span></h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3 class="accent-magenta">Programming Languages</h3>
+                    <div class="skill-list">
+                        <span class="skill-tag">Java</span>
+                        <span class="skill-tag">C++</span>
+                        <span class="skill-tag">JavaScript</span>
+                        <span class="skill-tag">SQL</span>
+                        <span class="skill-tag">OOP</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3 class="accent-yellow">Web & Markup</h3>
+                    <div class="skill-list">
+                        <span class="skill-tag">HTML</span>
+                        <span class="skill-tag">CSS</span>
+                        <span class="skill-tag">GitHub</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3 class="accent-cyan">Development Tools</h3>
+                    <div class="skill-list">
+                        <span class="skill-tag">VS Code</span>
+                        <span class="skill-tag">NetBeans</span>
+                        <span class="skill-tag">IntelliJ</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Get In <span class="accent-cyan">Touch</span></h2>
+            <div class="contact-content">
+                <p>I'm always open to new opportunities, collaborations, and conversations. Feel free to reach out!</p>
+                <div class="contact-links">
+                    <a href="mailto:mbaimbaitakalani410@gmail.com" class="contact-link" target="_blank" rel="noopener noreferrer">📧 Email</a>
+                    <a href="https://github.com/TI25034321" class="contact-link" target="_blank" rel="noopener noreferrer">🐙 GitHub</a>
+                    <a href="https://www.linkedin.com/in/mbaimbai-takalani-73a1a1361" class="contact-link" target="_blank" rel="noopener noreferrer">💼 LinkedIn</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2026 Mbaimbai Takalani Ignitius. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
