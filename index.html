@@ -8,6 +8,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=Fira+Code:wght@400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
+    <!-- Skip Navigation Link (Accessibility) -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    
     <!-- Custom Cursor -->
     <div class="cursor-dot" id="cursorDot"></div>
     <div class="cursor-follower" id="cursorFollower"></div>
@@ -36,6 +39,8 @@
     <!-- Floating Symbols Container -->
     <div class="floating-symbols-container" id="floatingSymbolsContainer"></div>
 
+    <main id="main-content">
+
     <!-- Hero Section -->
     <section id="home" class="hero">
         <div class="hero-container">
@@ -44,7 +49,7 @@
                     Welcome, I am
                     <span class="name-gradient">Mbaimbai Takalani<br>Ignitius</span>
                 </h1>
-                <p class="hero-subtitle"></p>
+                <p class="hero-subtitle">Mathematician | Programmer | Problem Solver</p>
                 <p class="hero-description">
                     Bachelor of Mathematics and Computer Science student at the University of Venda, combining rigorous mathematical thinking with computer science innovation to solve real-world challenges.
                 </p>
@@ -75,15 +80,14 @@
             <!-- Introduction and Goals -->
             <div class="about-content">
                 <p>I am a dedicated Mathematics and Computer Science student at the University of Venda, currently in my second year of study. I have a strong passion for problem-solving, analytical thinking, and applying mathematical concepts to real-world challenges.</p>
-                <p>My academic journey has been marked by consistent performance, including achieving distinctions across multiple modules and maintaining strong overall averages. I am particularly interested in areas that combine mathematics and computing to create efficient and meaningful solutions.</p>
-                <p>Beyond academics, I founded Sigma Academy, an initiative focused on mathematics support and mentoring, where I also employed a team member, demonstrating leadership and entrepreneurial thinking. I am also actively involved in a collaborative development initiative with fellow university students, where we design and build real-world, sustainable applications through problem-solving and system design.</p>
+                <p>Beyond academics, I founded Sigma Academy, a mathematics support and mentoring initiative where I built and led a small team — combining my passion for education with entrepreneurial thinking. I also collaborate with students from the University of Johannesburg, Wits, and the University of Limpopo on a development initiative building real-world, sustainable applications through problem-solving and system design.</p>
             </div>
             
             <!-- Academic Background Section (Centered) -->
-            <h3 style="font-family: 'Space Grotesk', sans-serif; font-size: 2.5rem; font-weight: 700; text-align: center; margin-top: 3rem; margin-bottom: 2rem; color: var(--white);">Academic <span class="accent-magenta">Background</span></h3>
+            <h3 class="subsection-heading">Academic <span class="accent-magenta">Background</span></h3>
             
             <!-- Education Cards -->
-            <div class="education-grid" style="margin-bottom: 3rem;">
+            <div class="education-grid education-grid--spaced">
                 <div class="education-card">
                     <h4 class="accent-magenta">University of Venda</h4>
                     <p class="degree">Bachelor of Mathematics and Computer Science</p>
@@ -99,7 +103,7 @@
             </div>
             
             <!-- Academic Achievements Subsection -->
-            <h3 class="section-subtitle accent-yellow" style="margin-top: 2rem;">Academic Achievements</h3>
+            <h3 class="section-subtitle accent-yellow section-subtitle--spaced-top">Academic Achievements</h3>
             <div class="achievements-content">
                 <div class="achievement-block">
                     <h4 class="accent-cyan">University of Venda</h4>
@@ -138,13 +142,13 @@
             </div>
             
             <!-- Mathematics Olympiad Subsection -->
-            <h3 class="section-subtitle accent-yellow" style="margin-top: 2rem;">Olympiad</h3>
+            <h3 class="section-subtitle accent-yellow section-subtitle--spaced-top">Olympiad</h3>
             <p class="olympiad-subtitle">SATMO (South African Tertiary Mathematics Olympiad)</p>
             <div class="olympiad-content">
                 <div class="olympiad-details">
                     <div class="olympiad-card">
                         <h4 class="accent-cyan">Competition Experience</h4>
-                        <p>Passionate participant in SATMO (South African Tertiary Mathematics Olympiad), challenging myself with complex problem-solving at the highest levels. These competitions have sharpened my analytical thinking and deepened my appreciation for elegant mathematical solutions.</p>
+                        <p>Passionate participant in the South African Tertiary Mathematics Olympiad (SATMO), where I represented the University of Venda and challenged myself with complex problem-solving at a high level. This experience has sharpened my analytical thinking and deepened my appreciation for elegant mathematical solutions.</p>
                     </div>
                     <div class="olympiad-card">
                         <h4 class="accent-magenta">Key Areas</h4>
@@ -162,7 +166,7 @@
             <h3 class="center-subsection-title">Skills and <span class="accent-cyan">Tools</span></h3>
             
             <!-- Tools -->
-            <h4 class="accent-magenta" style="font-family: 'Space Grotesk', sans-serif; font-size: 1.3rem; margin-top: 2rem; margin-bottom: 1rem;">Technical Skills</h4>
+            <h4 class="accent-magenta tools-subheading">Tools</h4>
             <div class="skills-grid">
                 <div class="skill-category">
                     <h5 class="accent-magenta">Programming Languages</h5>
@@ -193,8 +197,8 @@
             </div>
             
             <!-- Soft Skills -->
-            <h4 class="accent-yellow" style="font-family: 'Space Grotesk', sans-serif; font-size: 1.3rem; margin-top: 2rem; margin-bottom: 1rem;">Soft Skills</h4>
-            <div class="skill-list" style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
+            <h4 class="accent-yellow tools-subheading">Soft Skills</h4>
+            <div class="skill-list soft-skills-list">
                 <span class="skill-tag">Leadership</span>
                 <span class="skill-tag">Teamwork</span>
                 <span class="skill-tag">Critical Thinking</span>
@@ -231,13 +235,15 @@
             <div class="contact-content">
                 <p>I'm always open to new opportunities, collaborations, and conversations. Feel free to reach out!</p>
                 <div class="contact-links">
-                    <a href="mailto:mbaimbaitakalani410@gmail.com" class="contact-link" target="_blank" rel="noopener noreferrer">📧 Email</a>
-                    <a href="https://github.com/TI25034321" class="contact-link" target="_blank" rel="noopener noreferrer">🐙 GitHub</a>
-                    <a href="https://www.linkedin.com/in/mbaimbai-takalani-73a1a1361" class="contact-link" target="_blank" rel="noopener noreferrer">💼 LinkedIn</a>
+                    <a href="/cdn-cgi/l/email-protection#89e4ebe8e0e4ebe8e0fde8e2e8e5e8e7e0bdb8b9c9eee4e8e0e5a7eae6e4" class="contact-link" target="_blank" rel="noopener noreferrer" aria-label="Send me an email">📧 Email</a>
+                    <a href="https://github.com/TI25034321" class="contact-link" target="_blank" rel="noopener noreferrer" aria-label="Visit my GitHub profile">🐙 GitHub</a>
+                    <a href="https://www.linkedin.com/in/mbaimbai-takalani-73a1a1361" class="contact-link" target="_blank" rel="noopener noreferrer" aria-label="Visit my LinkedIn profile">💼 LinkedIn</a>
                 </div>
             </div>
         </div>
     </section>
+
+    </main>
 
     <!-- Footer -->
     <footer class="footer">
@@ -247,3 +253,4 @@
     <script src="script.js"></script>
 </body>
 </html>
+    
