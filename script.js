@@ -1,6 +1,6 @@
 const canvas = document.getElementById('backgroundCanvas');
+if (canvas) {
 const ctx = canvas.getContext('2d');
-
 // Set canvas size
 function resizeCanvas() {
     canvas.width = window.innerWidth;
@@ -128,6 +128,8 @@ function animateCanvas() {
 
 animateCanvas();
 
+}
+
 // ============================================
 // FLOATING SYMBOLS ANIMATION
 // ============================================
@@ -177,6 +179,8 @@ function createFloatingSymbols() {
 // SMOOTH SCROLL NAVIGATION
 // ============================================
 
+// HCI Principle: Natural Mapping - smooth scroll gives users
+// spatial awareness of the page layout as they navigate sections
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         const href = this.getAttribute('href');
@@ -197,36 +201,52 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 async function fetchGitHubProjects() {
     const projectsGrid = document.getElementById('projectsGrid');
 
-    try {
-        const response = await fetch('https://api.github.com/users/TI25034321/repos?sort=updated&per_page=12');
-
-        if (!response.ok) {
-            throw new Error('Failed to fetch projects');
+    // HCI Principle: Error Prevention - fallback projects guarantee
+    // content is always visible even if the GitHub API fails
+        const fallbackProjects = [
+        {
+            name: 'CALCULATOR',
+            description: 'A console-based Java application that performs basic arithmetic operations using user input, conditional logic, and switch statements. Features robust error handling including division by zero prevention.',
+            language: 'Java',
+            tools: 'VS Code, Git, Java Standard Library, Command Line',
+            html_url: 'https://github.com/TI25034321/CALCULATOR'
+        },
+        {
+            name: 'FUTURE-VALUE-project',
+            description: 'Financial mathematics implementation in Java using the compound interest formula A = P(1 + r/n)^nt to calculate investment maturity. Uses the Java Math library for high precision exponential calculations.',
+            language: 'Java',
+            tools: 'NetBeans, GitHub, Java Math Library, JUnit Testing',
+            html_url: 'https://github.com/TI25034321/FUTURE-VALUE-project'
+            
+        },
+        {
+            name: 'Cyber-Cipher',
+            description: 'A web-based cryptographic tool implementing the Caesar Cipher using the modular arithmetic formula E(x) = (x + n) mod 26. Users enter a message and select a shift key to encrypt or decrypt text, bridging mathematical theory with real-time JavaScript logic.',
+            language: 'JavaScript',
+            tools: 'VS Code, GitHub Pages, HTML5, CSS3, Chrome DevTools',
+            html_url: 'https://github.com/TI25034321/Cyber-Cipher'
         }
+    ];
 
-        const projects = await response.json();
-
-        if (projects.length === 0) {
-            projectsGrid.innerHTML = '<p class="loading">No projects found.</p>';
-            return;
-        }
-
+    function renderProjects(list) {
         projectsGrid.innerHTML = '';
-
-        projects.forEach(project => {
+        list.forEach(project => {
             const projectCard = document.createElement('a');
             projectCard.href = project.html_url;
             projectCard.target = '_blank';
             projectCard.rel = 'noopener noreferrer';
             projectCard.className = 'project-card';
 
-            const description = project.description || 'No description available';
+                       const description = project.description || 'No description available';
             const stars = project.stargazers_count || 0;
             const forks = project.forks_count || 0;
+            // Use tools from fallback, or show language if from API
+            const tools = project.tools || `Primary Language: ${project.language || 'N/A'}`;
 
             projectCard.innerHTML = `
                 <h3>${project.name}</h3>
                 <p class="project-description">${description}</p>
+                <div class="project-tools"><strong>Tools:</strong> ${tools}</div>
                 <div class="project-meta">
                     <span>${project.language || 'N/A'}</span>
                     <div class="project-stats">
@@ -235,12 +255,45 @@ async function fetchGitHubProjects() {
                     </div>
                 </div>
             `;
-
             projectsGrid.appendChild(projectCard);
         });
+    }
+
+    // Show fallback immediately so content is always visible
+    renderProjects(fallbackProjects);
+
+    try {
+        const response = await fetch('https://api.github.com/users/TI25034321/repos?sort=updated&per_page=12');
+
+        if (!response.ok) throw new Error('Failed to fetch projects');
+
+        const projects = await response.json();
+
+        // Exclude the portfolio repo itself since the user is already viewing it
+        // Exclude the portfolio repo itself and common non-project repos
+        const excluded = [
+            'Personal-Portfolio',  // This portfolio website
+            'TI25034321',          // Profile repo (if exists)
+            'README',              // Readme repo (if exists)
+            '.github'              // GitHub config repo
+        ];
+        // Filter out excluded repos and forks (if you want)
+        const filtered = projects.filter(p => {
+            // Exclude specific repo names
+            if (excluded.includes(p.name)) return false;
+            // Optionally exclude forks (uncomment if needed)
+            // if (p.fork) return false;
+            return true;
+        });
+
+        if (filtered.length === 0) throw new Error('No usable projects');
+
+        // Replace fallback with live GitHub data
+        renderProjects(filtered);
+
     } catch (error) {
-        console.error('Error fetching projects:', error);
-        projectsGrid.innerHTML = '<p class="loading">Unable to load projects. Please try again later.</p>';
+        // Fallback already showing — no action needed
+        console.error('GitHub API unavailable, showing fallback projects:', error);
     }
 }
 
@@ -248,6 +301,9 @@ async function fetchGitHubProjects() {
 // SCROLL ANIMATIONS
 // ============================================
 
+// HCI Principle: Progressive Disclosure
+// Elements fade in as user scrolls to them, reducing cognitive load
+// by revealing content progressively rather than all at once
 function setupScrollAnimations() {
     const observerOptions = {
         threshold: 0.1,
@@ -276,6 +332,8 @@ function setupScrollAnimations() {
 // ACTIVE NAV LINK ON SCROLL
 // ============================================
 
+// HCI Principle: Visibility of System Status
+// Active nav link updates as user scrolls, always showing current location
 function updateActiveNav() {
     const sections = document.querySelectorAll('section[id]');
     const navLinks = document.querySelectorAll('.nav-link');
@@ -317,6 +375,9 @@ if (ctaButton) {
 // MOBILE MENU
 // ============================================
 
+// HCI Principle: Consistency and Standards
+// Hamburger menu follows established mobile navigation conventions
+// Menu closes automatically on link click - prevents user confusion
 function setupMobileMenu() {
     const hamburger = document.getElementById('hamburger');
     const navMenu = document.getElementById('navMenu');
@@ -341,6 +402,10 @@ function setupMobileMenu() {
 // CUSTOM CURSOR
 // ============================================
 
+// HCI Principle: Aesthetic and Minimalist Design
+// Custom cursor enhances the tech aesthetic on desktop only.
+// Automatically disabled on touch/coarse pointer devices (mobile/tablet)
+// to preserve standard accessibility behaviour on those platforms.
 function setupCustomCursor() {
     const cursorDot = document.getElementById('cursorDot');
     const cursorFollower = document.getElementById('cursorFollower');
@@ -500,11 +565,3 @@ document.addEventListener('DOMContentLoaded', () => {
     setupScrollIndicator();
     setupTypingEffect();
 });
-
-// ============================================
-// WINDOW RESIZE HANDLER
-// ============================================
-
-window.addEventListener('resize', () => {
-    // Canvas resize is handled by resizeCanvas function
-}); 
